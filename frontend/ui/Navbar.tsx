@@ -8,10 +8,11 @@ import Button from '@/ui/Button'
 const Navbar = () => {
   const navigationItems = [
     { name: 'Home', href: '/' },
+    { name: 'Features', href: '/#features' },
     { name: 'How it Works', href: '/#how-it-works' },
-    { name: 'Pricing', href: '/#pricing' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'About', href: '/#about' },
+    { name: 'FAQ', href: '/#faq' },
+    // { name: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -29,7 +30,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          {/* <div className='hidden md:flex items-center space-x-8'>
+          <div className='hidden md:flex items-center space-x-8'>
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
@@ -40,7 +41,7 @@ const Navbar = () => {
                 <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-500 group-hover:w-full transition-all duration-300'></span>
               </Link>
             ))}
-          </div> */}
+          </div>
 
           {/* Actions */}
           <div className='flex items-center space-x-4'>
@@ -72,7 +73,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         <div className='md:hidden mt-4 pt-4 border-t border-gray-200'>
           <div className='flex flex-col space-y-3'>
-            {/* {navigationItems.map((item) => (
+            {navigationItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -80,7 +81,7 @@ const Navbar = () => {
               >
                 {item.name}
               </Link>
-            ))} */}
+            ))}
             <Link
               href="/dashboard"
               className='text-gray-700 hover:text-orange-600 font-medium py-2 px-3 rounded-lg hover:bg-gray-50 transition-all duration-300'

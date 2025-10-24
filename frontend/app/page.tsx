@@ -5,6 +5,7 @@ import Container from "@/ui/Container";
 import { useState } from "react";
 import Button from "@/ui/Button";
 import HeadingTwo from "@/ui/HeadingTwo";
+import Image from "next/image";
 
 interface GiftCategory {
   title: string;
@@ -29,66 +30,69 @@ export default function Home() {
   const [toggleBtn, setToggleBtn] = useState(true)
 
   const giftCat: GiftCategory[] = [
+    { title: "Send Gifts", icon: "💌" },
+    { title: "Reward Employees", icon: "👥" },
+    { title: "Host Giveaways", icon: "🎉" },
+    { title: "Charity Donations", icon: "❤️" },
+    { title: "Crowdfunding", icon: "🌍" },
+    { title: "Anonymous Gifting", icon: "🕵️" },
     { title: "Gift Love One", icon: "🎁" },
     { title: "Gift Employee", icon: "🎁" },
     { title: "Gift Event Attendees", icon: "🎁" },
     { title: "Do Giveaway", icon: "🎁" },
-    { title: "Gift Charity", icon: "🎁" },
-    { title: "Give Anonymously", icon: "🎁" },
-    { title: "Crowdfund Someone", icon: "🎁" },
-    { title: "Fund Project", icon: "🎁" },
-    { title: "Fund Startup", icon: "🎁" },
-    { title: "Fund Non Profit", icon: "🎁" },
   ];
 
   const howItWorksForGift: forGift[] = [
-    { img: "/hero.jpg", title: "Find clients and remote jobs", desc: "Create your profile to highlight your best work and attract top clients.", btnTitle: "Create gift", path: "/" },
-    { img: "/hero2.jpg", title: "Submit proposals for work", desc: "Negotiate rates for the projects you want or reply to invites from clients.", btnTitle: "Search for gift", path: "/" },
-    { img: "/hero3.jpg", title: "Get paid as you deliver work", desc: "Get paid as you deliver work and get paid as you deliver work.", btnTitle: "Redeem gift", path: "/" },
+    { img: "/hero.jpg", title: "Connect Your Wallet", desc: "Connect your Web3 wallet securely. We support MetaMask, WalletConnect, and other popular wallets.", btnTitle: "Connect Wallet", path: "/" },
+    { img: "/hero2.jpg", title: "Create Your Gift", desc: "Enter recipient details, add a personal message, and specify the amount in USDT or USDC.", btnTitle: "Create Gift", path: "/" },
+    { img: "/hero3.jpg", title: "Share & Claim", desc: "Share the claim link or code. Recipient claims the gift and funds transfer instantly on-chain.", btnTitle: "Share Gift", path: "/" },
   ]
   const howItWorksForFund: forFund[] = [
-    { img: "/hero3.jpg", title: "Find clients and remote jobs", desc: "Create your profile to highlight your best work and attract top clients.", btnTitle: "Create gift", path: "/" },
-    { img: "/hero.jpg", title: "Submit proposals for work", desc: "Negotiate rates for the projects you want or reply to invites from clients.", btnTitle: "Search for gift", path: "/" },
-    { img: "/hero2.jpg", title: "Get paid as you deliver work", desc: "Get paid as you deliver work and get paid as you deliver work.", btnTitle: "Redeem gift", path: "/" },
+    { img: "/hero3.jpg", title: "Set Up Campaign", desc: "Create your fundraising campaign with details, goals, and timeline for your cause or project.", btnTitle: "Start Campaign", path: "/" },
+    { img: "/hero.jpg", title: "Share Your Story", desc: "Share your campaign link across social media and communities to reach potential supporters.", btnTitle: "Share Campaign", path: "/" },
+    { img: "/hero2.jpg", title: "Receive Funds", desc: "Watch donations come in real-time. All funds are held securely until you withdraw them.", btnTitle: "Withdraw Funds", path: "/" },
   ]
 
   const cardData = [
     {
-      title: "MARKETPLACE",
-      fee: "5% fee after hiring",
-      description: "For starting out on our global freelancer marketplace",
+      title: "PERSONAL",
+      fee: "Free",
+      description: "Perfect for individuals who want to send personal gifts",
       list: [
-        "Free to post jobs on our global freelance marketplace",
-        "AI-powered features",
-        "Collaboration and project tracking tools",
+        "Send unlimited personal gifts",
+        "USDT & USDC support",
+        "Custom gift messages",
+        "Basic analytics",
       ],
       btnTitle: "Get Started",
-      path: "/"
+      path: "/dashboard"
     },
     {
-      title: "Business Plus",
+      title: "BUSINESS",
       label: "Popular",
-      fee: "10% fee after hiring",
-      description: "For growing businesses with premium features and support",
+      fee: "2.5% per gift",
+      description: "For businesses that need to send employee rewards and client gifts",
       list: [
-        "Access to pre-screened top 1% of talent",
-        "Premium customer support 24/7",
-        "60 invites per job post",
+        "CSV upload for bulk gifts",
+        "Advanced analytics & reporting",
+        "Team management",
+        "Priority support",
       ],
-      btnTitle: "Get Started",
-      path: "/"
+      btnTitle: "Start Business",
+      path: "/dashboard"
     },
     {
       title: "ENTERPRISE",
-      fee: "Contact sales",
-      description: "For scaling comprehensive solutions to the entire organization",
+      fee: "Custom pricing",
+      description: "For organizations with large-scale gifting and fundraising needs",
       list: [
-        "Dedicated account and program management",
-        "SSO and integrations",
-        "Unlimited invites per job",
+        "White-label solutions",
+        "API access",
+        "Dedicated account manager",
+        "Custom integrations",
       ],
-      btnTitle: "Get Started",
-      path: "/"
+      btnTitle: "Contact Sales",
+      path: "/contact"
     },
   ];
 
@@ -96,8 +100,8 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
       <Hero />
       <Container className="py-16">
-        <HeadingOne title="Gifting millions all over the world" className="mb-8 text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent" />
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 grid-rows-2 gap-6">
+        <HeadingOne title="Discover the Power of On-Chain Gifting" className="mb-8 text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent" />
+        <div id="features" className="grid md:grid-cols-2 lg:grid-cols-5 grid-rows-2 gap-6">
           {giftCat.map((item: GiftCategory, index: number) => (
             <div key={index} className="group">
               <div className="flex flex-col rounded-xl shadow-sm cursor-pointer border border-gray-200 hover:shadow-xl hover:border-orange-300 hover:-translate-y-1 transition-all duration-300 bg-white p-6 h-full">
@@ -177,7 +181,7 @@ export default function Home() {
       </Container>
 
       <Container className="py-16">
-        <div className="flex justify-between items-center mt-24 mb-12">
+        <div id="how-it-works" className="flex justify-between items-center mt-24 mb-12">
           <HeadingTwo title="How it works" className="" />
           <div className="flex items-center bg-gray-100 border border-gray-200 rounded-full p-1 shadow-sm">
             <button
@@ -209,9 +213,11 @@ export default function Home() {
             <div key={index} className="group bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-xl hover:border-orange-200 transition-all duration-300 overflow-hidden">
               <div className="cursor-pointer">
                 <div className="relative overflow-hidden">
-                  <img
+                  <Image
                     src={item.img}
-                    alt=""
+                    alt={item.title}
+                    width={400}
+                    height={280}
                     className="w-full h-[280px] object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -235,9 +241,11 @@ export default function Home() {
             <div key={index} className="group bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-xl hover:border-green-200 transition-all duration-300 overflow-hidden">
               <div className="cursor-pointer">
                 <div className="relative overflow-hidden">
-                  <img
+                  <Image
                     src={item.img}
-                    alt=""
+                    alt={item.title}
+                    width={400}
+                    height={280}
                     className="w-full h-[280px] object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -261,121 +269,72 @@ export default function Home() {
         </div>
       </Container>
 
-      {/* Features Section */}
-      <Container className="py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-            Why Choose Giv3?
-          </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Experience the future of gifting and fundraising with our cutting-edge platform
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="group text-center">
-            <div className="relative mb-6">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 to-yellow-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-orange-200 group-hover:to-orange-300 transition-all duration-300">
-                <svg className="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-300">
-              Lightning Fast
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Send gifts and receive funds instantly with our blockchain-powered platform
+      {/* About Section */}
+      <div id="about">
+        <Container className="py-20">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+              Why Choose Giv3?
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Experience the future of gifting and fundraising with our cutting-edge platform
             </p>
           </div>
 
-          <div className="group text-center">
-            <div className="relative mb-6">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-emerald-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-green-200 group-hover:to-green-300 transition-all duration-300">
-                <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="group text-center">
+              <div className="relative mb-6">
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 to-yellow-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-orange-200 group-hover:to-orange-300 transition-all duration-300">
+                  <svg className="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
               </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-300">
+                Lightning Fast
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Send gifts and receive funds instantly with our blockchain-powered platform
+              </p>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300">
-              Secure & Safe
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Bank-level security with 99.9% uptime ensures your transactions are always protected
-            </p>
-          </div>
 
-          <div className="group text-center">
-            <div className="relative mb-6">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-blue-200 group-hover:to-blue-300 transition-all duration-300">
-                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
+            <div className="group text-center">
+              <div className="relative mb-6">
+                <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-emerald-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-green-200 group-hover:to-green-300 transition-all duration-300">
+                  <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
               </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300">
+                Secure & Safe
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Bank-level security with 99.9% uptime ensures your transactions are always protected
+              </p>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-              Global Community
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Connect with millions of users worldwide in our thriving gifting ecosystem
-            </p>
-          </div>
 
-          <div className="group text-center">
-            <div className="relative mb-6">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative w-20 h-20 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-purple-200 group-hover:to-purple-300 transition-all duration-300">
-                <svg className="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
+            <div className="group text-center">
+              <div className="relative mb-6">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-blue-200 group-hover:to-blue-300 transition-all duration-300">
+                  <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
               </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                Global Community
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Connect with millions of users worldwide in our thriving gifting ecosystem
+              </p>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">
-              Smart Matching
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              AI-powered algorithms connect you with the perfect recipients and opportunities
-            </p>
           </div>
-
-          <div className="group text-center">
-            <div className="relative mb-6">
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 to-rose-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative w-20 h-20 bg-gradient-to-br from-pink-100 to-pink-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-pink-200 group-hover:to-pink-300 transition-all duration-300">
-                <svg className="w-10 h-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors duration-300">
-              Real-time Updates
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Track your gifts and campaigns with live notifications and progress updates
-            </p>
-          </div>
-
-          <div className="group text-center">
-            <div className="relative mb-6">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/20 to-blue-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative w-20 h-20 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center mx-auto group-hover:from-indigo-200 group-hover:to-indigo-300 transition-all duration-300">
-                <svg className="w-10 h-10 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              </div>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300">
-              Privacy First
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Advanced encryption and privacy controls keep your information secure
-            </p>
-          </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
 
       {/* Testimonials Section */}
       <Container className="py-20">
@@ -472,11 +431,11 @@ export default function Home() {
                 <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight">
                   Get insights into{' '}
                   <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
-                    freelancer pricing
+                    crypto gifting trends
                   </span>
                 </h1>
                 <p className="text-gray-300 mb-8 text-lg leading-relaxed">
-                  Find out how much freelancers charge for their services and what factors affect their rates.
+                  Discover how people are using blockchain technology to send meaningful gifts and support causes globally.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 max-w-2xl">
@@ -502,9 +461,11 @@ export default function Home() {
             <div className="w-full lg:w-[40%] flex justify-center items-center">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 to-yellow-400/20 rounded-full blur-3xl transform rotate-12"></div>
-                <img
+                <Image
                   src="/gift.png"
                   alt="Gift illustration"
+                  width={400}
+                  height={400}
                   className="relative w-full max-w-md h-auto object-contain drop-shadow-2xl"
                 />
               </div>
@@ -513,8 +474,60 @@ export default function Home() {
         </div>
       </Container>
 
+      {/* Newsletter & Community Section */}
+      {/* <div id="contact">
+        <Container className="py-20">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+              Join the Giv3 Community
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Be part of the future of on-chain gifting. Get early access, updates, and exclusive features.
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 px-6 py-4 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                  required
+                />
+                <Button
+                  title="Join Waitlist"
+                  path="/"
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+                />
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-6 mt-8 pt-6 border-t border-gray-100">
+                <span className="text-sm text-gray-500">Follow us:</span>
+                <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors duration-300">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                  </svg>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors duration-300">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                  </svg>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-gray-600 transition-colors duration-300">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div> */}
+
       {/* FAQ Section */}
-      <Container className="py-20">
+      <div id="faq">
+        <Container className="py-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
             Frequently Asked Questions
@@ -600,17 +613,18 @@ export default function Home() {
           </div>
         </div>
       </Container>
+      </div>
 
       <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl shadow-inner overflow-hidden">
         <div className="absolute inset-0 bg-[url('/graphic-lg.png')] bg-cover bg-center opacity-30"></div>
         <Container className="relative py-24">
           <div className="text-center mb-16">
             <HeadingOne
-              title="Clients only pay after hiring"
+              title="Start Your Gifting Journey Today"
               className="mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent"
             />
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Choose the perfect plan for your gifting and fundraising needs
+              Join thousands of users who are already experiencing the future of on-chain gifting and fundraising
             </p>
           </div>
 
