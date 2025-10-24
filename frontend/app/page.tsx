@@ -5,7 +5,6 @@ import Container from "@/ui/Container";
 import { useState } from "react";
 import Button from "@/ui/Button";
 import HeadingTwo from "@/ui/HeadingTwo";
-import Card from "@/ui/Card";
 
 interface GiftCategory {
   title: string;
@@ -401,7 +400,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              "Giv3 has completely transformed how I give back to my community. The platform is intuitive and the blockchain technology makes everything transparent and fast."
+              &quot;Giv3 has completely transformed how I give back to my community. The platform is intuitive and the blockchain technology makes everything transparent and fast.&quot;
             </p>
             <div className="flex items-center">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
@@ -425,7 +424,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              "As a small business owner, Giv3 has been incredible for organizing employee gifts and charity drives. The automation features save me hours every week."
+              &quot;As a small business owner, Giv3 has been incredible for organizing employee gifts and charity drives. The automation features save me hours every week.&quot;
             </p>
             <div className="flex items-center">
               <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold">
@@ -449,7 +448,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              "I raised funds for my medical treatment through Giv3. The community support was overwhelming, and the platform made the process seamless and transparent."
+              &quot;I raised funds for my medical treatment through Giv3. The community support was overwhelming, and the platform made the process seamless and transparent.&quot;
             </p>
             <div className="flex items-center">
               <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center text-white font-bold">

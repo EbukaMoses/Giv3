@@ -11,7 +11,7 @@ const DashboardPage: React.FC = () => {
             <div>
               <h1 className="text-2xl font-bold mb-2">Welcome back, John! 👋</h1>
               <p className="text-orange-100">
-                Here's what's happening with your gifts and campaigns today.
+                Here&apos;s what&apos;s happening with your gifts and campaigns today.
               </p>
             </div>
             <div className="hidden md:flex items-center space-x-3">
