@@ -53,49 +53,6 @@ export default function Home() {
     { img: "/hero2.jpg", title: "Receive Funds", desc: "Watch donations come in real-time. All funds are held securely until you withdraw them.", btnTitle: "Withdraw Funds", path: "/" },
   ]
 
-  const cardData = [
-    {
-      title: "PERSONAL",
-      fee: "Free",
-      description: "Perfect for individuals who want to send personal gifts",
-      list: [
-        "Send unlimited personal gifts",
-        "USDT & USDC support",
-        "Custom gift messages",
-        "Basic analytics",
-      ],
-      btnTitle: "Get Started",
-      path: "/dashboard"
-    },
-    {
-      title: "BUSINESS",
-      label: "Popular",
-      fee: "2.5% per gift",
-      description: "For businesses that need to send employee rewards and client gifts",
-      list: [
-        "CSV upload for bulk gifts",
-        "Advanced analytics & reporting",
-        "Team management",
-        "Priority support",
-      ],
-      btnTitle: "Start Business",
-      path: "/dashboard"
-    },
-    {
-      title: "ENTERPRISE",
-      fee: "Custom pricing",
-      description: "For organizations with large-scale gifting and fundraising needs",
-      list: [
-        "White-label solutions",
-        "API access",
-        "Dedicated account manager",
-        "Custom integrations",
-      ],
-      btnTitle: "Contact Sales",
-      path: "/contact"
-    },
-  ];
-
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
       <Hero />

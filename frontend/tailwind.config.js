@@ -11,9 +11,9 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          light: "#A993FF",
-          DEFAULT: "#6C63FF",
-          dark: "#4F46E5",
+          light: "#16BFA8",
+          DEFAULT: "#0FA47A",
+          dark: "#0D8F6B",
         },
         accent: {
           teal: "#2DD4BF",
@@ -27,14 +27,14 @@ module.exports = {
         // Brand gradients
         brand: {
           primary: {
-            light: "from-violet-400 to-purple-400",
-            DEFAULT: "from-violet-500 to-purple-500",
-            dark: "from-violet-600 to-purple-600",
+            light: "from-emerald-400 to-teal-400",
+            DEFAULT: "from-emerald-500 to-teal-500",
+            dark: "from-emerald-600 to-teal-600",
           },
           secondary: {
-            light: "from-purple-400 to-pink-400",
-            DEFAULT: "from-purple-500 to-pink-500",
-            dark: "from-purple-600 to-pink-600",
+            light: "from-teal-400 to-cyan-400",
+            DEFAULT: "from-teal-500 to-cyan-500",
+            dark: "from-teal-600 to-cyan-600",
           },
         },
         // Neutral colors with proper naming
@@ -52,15 +52,15 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #6C63FF 0%, #A993FF 100%)',
-        'gradient-secondary': 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #0FA47A 0%, #16BFA8 100%)',
+        'gradient-secondary': 'linear-gradient(135deg, #16BFA8 0%, #2DD4BF 100%)',
         'gradient-teal': 'linear-gradient(135deg, #2DD4BF 0%, #14B8A6 100%)',
         'gradient-pink': 'linear-gradient(135deg, #F9A8D4 0%, #F472B6 100%)',
         'gradient-gold': 'linear-gradient(135deg, #FACC15 0%, #EAB308 100%)',
       },
       boxShadow: {
-        'brand': '0 4px 14px 0 rgba(108, 99, 255, 0.15)',
-        'brand-lg': '0 10px 25px 0 rgba(108, 99, 255, 0.25)',
+        'brand': '0 4px 14px 0 rgba(15, 164, 122, 0.15)',
+        'brand-lg': '0 10px 25px 0 rgba(15, 164, 122, 0.25)',
       },
     },
   },

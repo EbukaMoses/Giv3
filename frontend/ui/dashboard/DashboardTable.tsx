@@ -91,7 +91,7 @@ const DashboardTable: React.FC = () => {
       <div className="px-6 py-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-semibold text-gray-900">Recent Activity</h3>
-          <button className="text-sm text-orange-600 hover:text-orange-700 font-medium">
+          <button className="text-sm text-[#0FA47A] hover:text-[#16BFA8] font-medium">
             View all
           </button>
         </div>
@@ -154,7 +154,7 @@ const DashboardTable: React.FC = () => {
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                  <button className="text-orange-600 hover:text-orange-900 mr-4">
+                  <button className="text-[#0FA47A] hover:text-[#16BFA8] mr-4">
                     View
                   </button>
                   <button className="text-gray-600 hover:text-gray-900">

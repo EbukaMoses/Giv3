@@ -62,7 +62,7 @@ const ConvertPage: React.FC = () => {
                   <span className="font-medium text-gray-900">1 USDT = 1.00 USD</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-800">You'll receive:</span>
+                  <span className="text-gray-800">You&apos;ll receive:</span>
                   <span className="font-medium text-gray-900">$1,000 USD</span>
                 </div>
                 <div className="flex justify-between text-sm">
