@@ -19,28 +19,28 @@ const stats: StatCard[] = [
     description: 'vs last month'
   },
   {
-    title: 'Total Raised',
-    value: '$45,678',
+    title: 'Total Claimed',
+    value: '1,089',
     change: '+8.2%',
     changeType: 'positive',
-    icon: '💰',
+    icon: '✅',
     description: 'vs last month'
   },
   {
-    title: 'Active Campaigns',
-    value: '23',
-    change: '+3',
-    changeType: 'positive',
-    icon: '📈',
-    description: 'new this week'
-  },
-  {
-    title: 'Recipients Helped',
-    value: '567',
+    title: 'Total Raised',
+    value: '$45,678',
     change: '+15.3%',
     changeType: 'positive',
-    icon: '👥',
-    description: 'vs last month'
+    icon: '💰',
+    description: 'charity + projects'
+  },
+  {
+    title: 'Total Spent/Converted',
+    value: '$23,456',
+    change: '+5.7%',
+    changeType: 'positive',
+    icon: '💳',
+    description: 'fiat + bills + airtime'
   }
 ];
 

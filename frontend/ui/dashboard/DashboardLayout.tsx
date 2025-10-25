@@ -8,17 +8,17 @@ interface DashboardLayoutProps {
 
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      {/* Sidebar */}
+    <div className="min-h-screen bg-[#F8FAFC] flex">
+      {/* Sidebar - Fixed */}
       <DashboardSidebar />
 
       {/* Main content area */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col ml-64">
         {/* Header */}
         <DashboardHeader />
 
         {/* Page content */}
-        <main className="flex-1 p-6 bg-gray-50">
+        <main className="flex-1 p-6">
           <div className="max-w-7xl mx-auto">
             {children}
           </div>

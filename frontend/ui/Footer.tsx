@@ -53,33 +53,33 @@ const Footer = () => {
 
   return (
     <Container className="py-16">
-      <footer className="bg-gray-900 text-gray-300 rounded-2xl overflow-hidden">
+      <footer className="bg-gray-900 text-gray-700 rounded-2xl overflow-hidden ">
         <div className="max-w-7xl mx-auto px-8 py-12">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {/* Logo & Description */}
             <div className="md:col-span-2">
               <Link href="/" className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-500 rounded-xl flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-[#0FA47A] to-[#16BFA8] rounded-xl flex items-center justify-center">
                   <span className="text-white font-bold text-xl">G</span>
                 </div>
                 <span className="text-2xl font-bold text-white">
-                  Giv<span className="text-orange-500">3</span>
+                  Giv<span className="text-[#0FA47A]">3</span>
                 </span>
               </Link>
-              <p className="text-gray-400 mb-6 max-w-md">
+              <p className="text-gray-600 mb-6 max-w-md">
                 Empowering giving through blockchain. Send crypto gifts, host giveaways, and fund causes with ease — fast, secure, and transparent.
               </p>
 
               {/* Social Links */}
               <div className="flex items-center space-x-4">
-                <span className="text-gray-400 text-sm">Follow us:</span>
+                <span className="text-gray-600 text-sm">Follow us:</span>
                 <div className="flex space-x-3">
                   {socialLinks.map((social) => (
                     <a
                       key={social.name}
                       href={social.href}
-                      className="text-gray-400 hover:text-orange-500 transition-colors duration-300"
+                      className="text-gray-500 hover:text-[#0FA47A] transition-colors duration-300"
                       aria-label={social.name}
                     >
                       {social.icon}
@@ -91,13 +91,13 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h3 className="font-semibold text-white mb-4">Quick Links</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">Quick Links</h3>
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-orange-500 transition-colors duration-300"
+                      className="text-gray-600 hover:text-[#0FA47A] transition-colors duration-300"
                     >
                       {link.name}
                     </Link>
@@ -108,29 +108,29 @@ const Footer = () => {
 
             {/* Support */}
             <div>
-              <h3 className="font-semibold text-white mb-4">Support</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">Support</h3>
               <ul className="space-y-3">
-                <li><Link href="/#faq" className="text-gray-400 hover:text-orange-500 transition-colors duration-300">Help Center</Link></li>
-                <li><Link href="/#contact" className="text-gray-400 hover:text-orange-500 transition-colors duration-300">Contact Us</Link></li>
-                <li><Link href="/#about" className="text-gray-400 hover:text-orange-500 transition-colors duration-300">About Giv3</Link></li>
-                <li><Link href="/#features" className="text-gray-400 hover:text-orange-500 transition-colors duration-300">Features</Link></li>
+                <li><Link href="/faq" className="text-gray-600 hover:text-[#0FA47A] transition-colors duration-300">Help Center</Link></li>
+                <li><Link href="/contact" className="text-gray-600 hover:text-[#0FA47A] transition-colors duration-300">Contact Us</Link></li>
+                <li><Link href="/about" className="text-gray-600 hover:text-[#0FA47A] transition-colors duration-300">About Giv3</Link></li>
+                <li><Link href="/features" className="text-gray-600 hover:text-[#0FA47A] transition-colors duration-300">Features</Link></li>
               </ul>
             </div>
           </div>
 
           {/* Bottom Section */}
-          <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between">
-            <p className="text-gray-400 text-sm">
+          <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between">
+            <p className="text-gray-600 text-sm">
               © 2025 Giv3. All rights reserved.
             </p>
             <div className="flex flex-wrap items-center gap-6 mt-4 md:mt-0">
-              <Link href="#" className="text-gray-400 hover:text-orange-500 text-sm transition-colors duration-300">
+              <Link href="#" className="text-gray-600 hover:text-[#0FA47A] text-sm transition-colors duration-300">
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-orange-500 text-sm transition-colors duration-300">
+              <Link href="#" className="text-gray-600 hover:text-[#0FA47A] text-sm transition-colors duration-300">
                 Terms of Service
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-orange-500 text-sm transition-colors duration-300">
+              <Link href="#" className="text-gray-600 hover:text-[#0FA47A] text-sm transition-colors duration-300">
                 Cookie Policy
               </Link>
             </div>

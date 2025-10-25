@@ -15,7 +15,7 @@ const DashboardHeader: React.FC = () => {
             <input
               type="text"
               placeholder="Search campaigns, gifts, recipients..."
-              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0FA47A] focus:border-transparent bg-white"
             />
           </div>
         </div>
@@ -23,14 +23,14 @@ const DashboardHeader: React.FC = () => {
         {/* Right side - Actions */}
         <div className="flex items-center space-x-4 ml-6">
           {/* Quick Actions */}
-          <button className="flex items-center space-x-2 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors">
+          <button className="flex items-center space-x-2 px-4 py-2 bg-[#0FA47A] text-white rounded-lg hover:bg-[#16BFA8] transition-colors">
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
             <span className="font-medium">New Gift</span>
           </button>
 
-          <button className="flex items-center space-x-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
+          <button className="flex items-center space-x-2 px-4 py-2 bg-[#16BFA8] text-white rounded-lg hover:bg-[#0FA47A] transition-colors">
             <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
             </svg>
@@ -47,7 +47,7 @@ const DashboardHeader: React.FC = () => {
 
           {/* Profile */}
           <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-r from-[#0FA47A] to-[#16BFA8] rounded-full flex items-center justify-center">
               <span className="text-white font-semibold text-sm">JD</span>
             </div>
             <div className="hidden md:block">

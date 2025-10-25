@@ -3,23 +3,73 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #f97316;
+  --primary-foreground: #ffffff;
+  --accent: #ea580c;
+  --accent-foreground: #ffffff;
+  --muted: #f5f5f4;
+  --muted-foreground: #71717a;
+  --border: #e4e4e7;
+  --input: #ffffff;
+  --ring: #f97316;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --popover: #ffffff;
+  --popover-foreground: #171717;
+  --secondary: #f5f5f4;
+  --secondary-foreground: #171717;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: "Neue Montreal", neue-montreal-fallback, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --primary: #f97316;
+    --primary-foreground: #ffffff;
+    --accent: #ea580c;
+    --accent-foreground: #ffffff;
+    --muted: #f5f5f4;
+    --muted-foreground: #71717a;
+    --border: #e4e4e7;
+    --input: #ffffff;
+    --ring: #f97316;
+    --card: #ffffff;
+    --card-foreground: #171717;
+    --popover: #ffffff;
+    --popover-foreground: #171717;
+    --secondary: #f5f5f4;
+    --secondary-foreground: #171717;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #fff;
-    --foreground: #000;
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+    --primary: #f97316;
+    --primary-foreground: #ffffff;
+    --accent: #ea580c;
+    --accent-foreground: #ffffff;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --border: #3f3f46;
+    --input: #27272a;
+    --ring: #f97316;
+    --card: #27272a;
+    --card-foreground: #fafafa;
+    --popover: #27272a;
+    --popover-foreground: #fafafa;
+    --secondary: #27272a;
+    --secondary-foreground: #fafafa;
   }
 }
 
 body {
-  background: var(--background);
+  background: #FDFDFD;
   color: var(--foreground);
-  font-family: "Neue Montreal", neue-montreal-fallback, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Inter", "Poppins", "Satoshi", system-ui, -apple-system, sans-serif;
 }
